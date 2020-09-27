@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BMI Calculator</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="Calcu.jpg" />
+
+                 <link rel="stylesheet" type="text/css" href="Calcu.jpg" />
+                <link rel="icon" href="Calcu.jpg" sizes="32x32" />
+<link rel="icon" href="Calcu.jpg" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="Calcu.jpg" /></head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center"><strong>BMI CALCULATOR</strong></div>
+        <div class="card-body">
+            <form onsubmit="return false">
+                <div class="form-group">
+                    <label> Weight </label>
+                    <input type="text" name="" id="weight" class="form-control" placeholder="Weight in kg" required>
+                </div>
+                <div class="form-group">
+                    <label> Height </label>
+                    <input type="text" name="" id="height" class="form-control" placeholder="Height in ft" required>
+                    N.B : (5 Ft 0 Inch = 5.00) <br/>
+                          (5 Ft 1 inch = 5.083) <br/>
+                          (5 Ft 2 inch = 5.167)<br/>
+                          (5 Ft 3 inch = 5.25)<br/>
+                          (5 Ft 4 inch = 5.33)<br/>
+                          (5 Ft 5 inch = 5.4167)<br/>
+                          (5 Ft 6 inch = 5.5)<br/>
+                          (5 Ft 7 inch = 5.583)<br/>
+                          (5 Ft 8 inch = 5.67)<br/>
+                          (5 Ft 9 inch = 5.75)<br/>
+                          (5 Ft 10 inch = 5.83)<br/>
+                          (5 Ft 11 inch = 5.9167)<br/>
+                        
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>BMI VALUE</strong></label>
+                    <input type="text" name="" id="bmi value" class="form-control" placeholder="No need to fill this section."> 
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success" onclick="getbmivalue()">Check BMI</button> <br/>
+                </div>
+                <table>
+                    <tr>
+                      <th>বিএমআই মান</th>
+                      <th>করণীয় </th>
+                      
+                    </tr>
+                    <tr>
+                      <td>18.5 এর নিচে</td>
+                      <td>শরীরের ওজন কম । পরিমিত খাদ্যগ্রহণ করে ওজন বাড়াতে হবে ।</td>
+                      
+                    </tr>
+                    <tr>
+                      <td>18.5 থেকে 24.9</td>
+                      <td>সুস্বাস্থ্যের আদর্শ মান । </td>
+                     
+                    </tr>
+                    <tr>
+                      <td>25 থেকে 29.9</td>
+                      <td>শরীরের ওজন অতিরিক্ত । ব্যায়াম করে অতিরিক্ত ওজন কমাতে হবে । </td>
+                      
+                    </tr>
+                    <tr>
+                      <td>30 থেকে 34.9</td>
+                      <td>মোটা হওয়ার প্রথম স্তর । বেছে খাদ্যগ্রহণ ও ব্যায়াম করা প্রয়োজন ।</td>
+                      
+                    </tr>
+                    <tr>
+                      <td>35 থেকে 39.9</td>
+                      <td>মোটা হওয়ার দ্বিতীয় স্তর । পরিমিত খাদ্যগ্রহণ ও ব্যায়াম করা প্রয়োজন ।</td>
+                    
+                    </tr>
+                    <tr>
+                      <td>40 এর উপরে</td>
+                      <td>অতিরিক্ত মোটাত্ব । মৃত্যুঝুঁকির আশঙ্কা । ডাক্তারের পরামর্শ প্রয়োজন । </td>
+                    
+                    </tr>
+                  </table>
+
+                
+
+            </form>
+        </div>
+        <div class="card-footer text-center">&copy; Sadman Sami <br> Built with ❤️ by Sadman Sami.</div>
+    </div>
+</div>
+
+
+
+<script>
+    function getbmivalue(){
+        var weight = document.getElementById('weight').value ;
+        var height = document.getElementById('height').value;
+
+        
+        height = height * 0.3048;
+
+        var newbmivalue = weight / (height * height);
+
+        newbmivalue = (Math.round(newbmivalue * 100) / 100).toFixed(2);
+        
+        document.getElementById('bmi value').value = newbmivalue;
+
+
+    }
+    var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pooper.js/1.14.6/umd/pooper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</body>
+</html>
